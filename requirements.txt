@@ -1,0 +1,17 @@
+# Supported Python: >=3.10,<3.15 (PyTorch wheels are not currently published for 3.15).
+torch>=2.7
+torchvision>=0.22
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.5
+Pillow>=10.4
+opencv-python-headless>=4.10
+matplotlib>=3.9
+datasets>=3.0
+huggingface-hub>=0.25
+pyarrow>=17.0
+PyYAML>=6.0
+tqdm>=4.66
+tabulate>=0.9
+openpyxl>=3.1
+pytest>=8.0

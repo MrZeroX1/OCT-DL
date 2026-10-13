@@ -1,0 +1,26 @@
+seed: 2026
+device: auto
+data:
+  train_csv: data/splits/train.csv
+  val_csv: data/splits/val.csv
+  image_size: 224
+  num_workers: 4
+  persistent_workers: true
+model:
+  architecture: efficientnet_b0
+  pretrained: true
+  freeze_backbone: false
+  dropout: 0.30
+  biomarkers: [irf, hrf, pavf, favf, drt_me, vitreous_debris]
+training:
+  batch_size: 32
+  epochs: 30
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  gradient_clip_norm: 1.0
+  mixed_precision: true
+  early_stopping_patience: 7
+  scheduler_patience: 3
+  scheduler_factor: 0.5
+  checkpoint_dir: checkpoints
+  resume: null

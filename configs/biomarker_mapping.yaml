@@ -1,0 +1,38 @@
+# Established directly from the OLIVES Hugging Face biomarker_detection card.
+# Labels absent from the downloaded curated subset remain unknown (not negative).
+dataset: gOLIVES/OLIVES_Dataset
+configuration: biomarker_detection
+source_license: MIT (Hugging Face distribution); CC-BY-4.0 (Zenodo record 7105232)
+supported_biomarkers:
+  - key: irf
+    display_name: Intraretinal Fluid
+    source_column: B4
+    source_definition: "Intraretinal hyporeflective areas/cysts with minimum fluid height 20 um"
+  - key: hrf
+    display_name: Intraretinal Hyperreflective Foci
+    source_column: B1
+    source_definition: "Intraretinal highly reflective spots (IRHRF)"
+additional_verified_biomarkers:
+  - key: pavf
+    display_name: Partially Attached Vitreous Face
+    source_column: B2
+  - key: favf
+    display_name: Fully Attached Vitreous Face
+    source_column: B3
+  - key: drt_me
+    display_name: Diffuse Retinal Thickening / Macular Edema
+    source_column: B5
+  - key: vitreous_debris
+    display_name: Vitreous Debris
+    source_column: B6
+excluded_requested_biomarkers:
+  srf:
+    requested_name: Subretinal Fluid
+    reason: "No direct SRF column in curated biomarker_detection subset; never inferred from another label."
+  dril:
+    requested_name: Disorganization of Retinal Inner Layers
+    reason: "No direct DRIL column in curated biomarker_detection subset; present only in full disease_classification annotations."
+  ez_disruption:
+    requested_name: Ellipsoid Zone Disruption
+    reason: "No direct EZ column in curated biomarker_detection subset; present only in full disease_classification annotations."
+model_output_keys: [irf, hrf, pavf, favf, drt_me, vitreous_debris]
